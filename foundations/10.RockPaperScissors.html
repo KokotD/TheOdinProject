@@ -1,0 +1,53 @@
+<script>
+    // This script is part of the Rock-Paper-Scissors game implementation   
+    // It handles the game logic and user interactions
+
+    /* Pseudocode:
+        1. Get user choice from the UI
+        2. Get computer choice randomly
+        3. Compare choices to determine the winner
+        4. Display the result
+        5. Allow the user to play again
+    */
+    function getUserChoice() {
+        let userInput = prompt("Enter rock, paper, or scissors:");
+        return userInput;
+    }
+    function getComputerChoice() {
+        const choices = ["rock", "paper", "scissors"];
+        const randomIndex = Math.floor(Math.random() * choices.length);
+        return choices[randomIndex];
+    }
+    function getResult(userChoice, computerChoice) {
+        // From the human players perspective
+        if (userChoice === computerChoice) {
+            return "It's a tie!";
+        } else if (
+            (userChoice === "rock" && computerChoice === "scissors") ||
+            (userChoice === "paper" && computerChoice === "rock") ||
+            (userChoice === "scissors" && computerChoice === "paper")
+        ) {
+            return "You win! | UC: " + userChoice + " beats CC: " + computerChoice;
+        } else {
+            return "You lose! | UC: " + computerChoice + " beats UC: " + userChoice;
+        }
+    }
+
+    let userChoice = getUserChoice();
+    let computerChoice = getComputerChoice();
+    let result = getResult(userChoice, computerChoice);
+
+    // 4. Display the result in the console
+    console.log(result);
+
+    // 5. Update the UI with the result
+    let playAgain = confirm("Do you want to play again?");
+    while (playAgain) {
+        userChoice = getUserChoice();
+        computerChoice = getComputerChoice();
+        result = getResult(userChoice, computerChoice);
+        console.log(result);
+    }
+
+    console.log("Thanks for playing!");
+</script>
