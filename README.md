@@ -1,6 +1,6 @@
 # The Odin Project
 
-This repository contains my solutions and notes as I work through the [The Odin Project](https://www.theodinproject.com/) web development curriculum.
+This repository contains my solutions and notes as I work through the [The Odin Project](https://www.theodinproject.com/) web development curriculum and learning.
 
 ## Structure
 
